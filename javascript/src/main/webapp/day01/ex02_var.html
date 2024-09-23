@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>변수 : var(권장X), let(변수,권장), const(상수)</title>
+<script type="text/javascript">
+	// JS 변수 : 1. 자료형을 지정하지 않는다.
+	//          예) JS) var su = 100.0;   자바) int su = 100.0 ;
+	//          2. 숫자로 시작 할 수 없다.
+	//          3. 대소문자를 구분한다.
+	//          카멜 케이스)    myFirstHome
+	//          스네이크 케이스) my_first_home
+	
+	// 변수
+	// 1. var 이름 = 데이터(정수, 실수, boolean, char, string, null, function,class..)
+	//    var 호이스팅 : 변수와 함수(function)선언이 맨 위로 이동되는 자바스크립트의 메커니즘
+	//                 중복선언을 할 수 있다.(단점)
+	var name = 'Hello';
+	console.log('이름 : ' + name); // hello
+	
+	console.log(name); // hello
+	var name = "Hi~~~"; 
+	/*
+	  위의 실제 해석
+	  var name2;
+	  console.log(name2); // undefinde => 아직 정의되지않음
+	  name3 = "Hi~~~~"
+	*/
+	
+	// 2. let(변수, 권장) : 재정의 불가능, 해당 블록에서만 사용가능(범위가 다르면 재정의 가능)
+	let age = 24 ;
+	console.log('나이 : ' , age);
+	
+	// let age = 30; //재정의 불가능
+	age = 30 ;  // 가능
+	
+	let addr = '서울';
+	let times = 4 ;
+	if(times >3){
+		// 해당 블록에서만 사용가능(범위가 다르면 재정의 가능)
+		let addr = '제주도';
+		console.log('주소-1 : ' , addr);
+	}
+	console.log('주소-2 : ' , addr);
+	
+	// 3. const (상수)
+	const gender = true ;
+	console.log('성별 : ' , gender);
+	
+	// const gender = false; // 재정의 불가능
+	// gender = false;       // 상수라서 데이터변경 못함
+	if(times >3){
+		// 해당 블록에서만 사용가능(범위가 다르면 재정의 가능)
+		const gender = false;
+		console.log('성별-1 : ' , gender);
+	}
+	console.log('성별-2 : ' , gender);
+	
+	// 자바스크립트에서도 EL 사용가능
+	let str = "Hello " + addr ;
+	console.log("결과 : " , str);
+	
+	 // `` (백틱) : 표현언어, 여러줄
+	let str2 = `Hello ${addr}`;         
+	console.log("결과2 : " , str2);
+	console.log(`결과2 : Hello ${addr}`);
+	
+</script>
+
+
+
+</head>
+<body>
+
+</body>
+</html>

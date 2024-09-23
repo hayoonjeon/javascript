@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연산자</title>
+<script type="text/javascript">
+	let my_int = 5 ;
+	let my_float = 6.667 ;
+	
+	// 타입 알아보기 : typeof
+	// 정수와 실수의 타입은 number 이다.
+	console.log(`my_int = ${my_int}`);
+	console.log(typeof my_int);
+	
+	console.log(`my_float = ${my_float}`);
+	console.log(typeof my_float);
+	
+	// 실수일때 고정된 소수점 자리수를 반올림 하려면 toFixed() 메서드 사용
+	let num1 = 1.7666548;
+	let res = num1.toFixed(3);
+	console.log(`res = ${res}`); // 1.767
+	
+	// 실수일때 고정된 소수점 자리수를 버림 하려면 Math.floor(값 * 자리수) / 자리수 
+	let res2 = Math.floor(num1 * 1000)/1000;
+	console.log(`res2 = ${res2}`); // 1.766
+	
+	// 실수일때 고정된 소수점 자리수를 올림 하려면 Math.ceil(값 * 자리수) / 자리수
+	let num2 = 1.7664548;
+	let res3 = Math.ceil(num2 * 1000)/1000;
+	console.log(`res3 = ${res3}`); // 1.767
+	
+	// 문자를 숫자로 변경 : Number("숫자형문자")
+	let num3 = "75";
+	let res4 = num3 + 5 ;  // 문자열 + 숫자 = 문자열
+	console.log(`res4 = ${res4} ,` ,  typeof res4);
+	
+	let res5 = Number(num3) + 5 ;
+	console.log(`res5 = ${res5} ,` ,  typeof res5);
+	
+	let res6 = Number("korea") + 5 ; // NaN(Not a Number) => 숫자 자리에 맞지않은 문자가 들어왔다.
+	console.log(`res6 = ${res6} ,` ,  typeof res6);
+	
+	let su1 = 7 ;
+	let su2 = 3 ;
+	document.write("<h2> 산술연산자 (+,-,*,/,%)</h2>");
+	document.write("<p>" , su1 , "+", su2 , "=", (su1+su2) , "</p>");
+	document.write("<p>" , su1 , "-", su2 , "=", (su1-su2) , "</p>");
+	document.write("<p>" , su1 , "*", su2 , "=", (su1*su2) , "</p>");
+	document.write("<p>" , su1 , "/", su2 , "=", Math.floor((su1/su2) * 10) / 10 , "</p>");
+	document.write("<p>" , su1 , "%", su2 , "=", (su1%su2) , "</p>");
+	document.write("<hr>");
+	
+	document.write("<h2> 증감연산자 (++, --)</h2>");
+	// 숫자에 직접 증감 연산자 사용 못함 (변수 만들어서 사용)
+	// document.write("<p>", ++3 , "</p>");
+	
+	let su3 = 3;
+	document.write(`<h3> su3++ = ${su3++} </h3>`);  // 3
+	document.write(`<h3> ++su3 = ${++su3} </h3>`);  // 5
+	document.write("<hr>");
+	
+	document.write("<h2> 대입연산자 (+=, -=, *=, /=)</h2>");
+	
+	let su4 = 7 ;
+	document.write(`<h3> su4 += 3 => ${su4 += 3} </h3>`);  // 10
+	document.write(`<h3> su4 -= 3 => ${su4 -= 3} </h3>`);  // 7
+	document.write(`<h3> su4 *= 3 => ${su4 *= 3} </h3>`);  // 21
+	document.write(`<h3> su4 /= 3 => ${su4 /= 3} </h3>`);  // 7
+	document.write(`<h3> su4 %= 3 => ${su4 %= 3} </h3>`);  // 1
+	
+	document.write("<hr>");
+	
+	document.write("<h2> 비교연산자 (>, >=, <, <=, ==, !=, ===, !==)</h2>");
+	su1 = 7 ;
+	su2 = 3 ;
+	document.write(`<h3> su1 >= su2 => ${su1 >= su2} </h3>`); // true 
+	document.write(`<h3> su1 <= su2 => ${su1 <= su2} </h3>`); // false
+	document.write(`<h3> su1 == su2 => ${su1 == su2} </h3>`); // false
+	document.write(`<h3> su1 != su2 => ${su1 != su2} </h3>`); // true
+	
+	document.write("<h2> 비교연산자 주의사항</h2>");
+	su1 = 1000;
+	su2 = "1000";
+	document.write(`<h3> su1 == su2 => ${su1 == su2} </h3>`); // true
+	document.write(`<h3> su1 != su2 => ${su1 != su2} </h3>`); // false
+	document.write("<hr>");
+	
+	// === 는 자료형과 데이터가 모두 일치할때만 true 가 된다.
+	document.write(`<h3> su1 === su2 => ${su1 === su2} </h3>`); // false
+	document.write(`<h3> su1 !== su2 => ${su1 !== su2} </h3>`); // true
+	document.write("<hr>");
+	
+	su1 = true; // true을 1로 취급할 수 있다.
+	su2 = 1 ;
+	document.write(`<h3> ${su1} == ${su2} => ${su1 == su2} </h3>`); // true
+	document.write(`<h3> ${su1} != ${su2} => ${su1 != su2} </h3>`); // false
+	document.write("<hr>");
+	
+	document.write(`<h3> ${su1} === ${su2} => ${su1 === su2} </h3>`); // false
+	document.write(`<h3> ${su1} !== ${su2} => ${su1 !== su2} </h3>`); // true
+	document.write("<hr>");
+	
+	su1 = false; // false을 0로 취급할 수 있다.
+	su2 = 0 ;
+	document.write(`<h3> ${su1} == ${su2} => ${su1 == su2} </h3>`); // true
+	document.write(`<h3> ${su1} != ${su2} => ${su1 != su2} </h3>`); // false
+	document.write("<hr>");
+	
+	document.write(`<h3> ${su1} === ${su2} => ${su1 === su2} </h3>`); // false
+	document.write(`<h3> ${su1} !== ${su2} => ${su1 !== su2} </h3>`); // true
+	document.write("<hr>");
+	
+	document.write("<h2> 논리연산자 (&&(AND), ||(OR), !(NOT))</h2>");
+	su1 = true;
+	su2 = false;
+	document.write(`<h3> ${su1} && ${su1} => ${su1 && su1} </h3>`); // true
+	document.write(`<h3> ${su1} && ${su2} => ${su1 && su2} </h3>`); // false
+	document.write(`<h3> ${su2} && ${su1} => ${su2 && su1} </h3>`); // false
+	document.write(`<h3> ${su2} && ${su2} => ${su2 && su2} </h3>`); // false
+	document.write("<hr>");
+	
+	document.write(`<h3> ${su1} || ${su1} => ${su1 || su1} </h3>`); // true
+	document.write(`<h3> ${su1} || ${su2} => ${su1 || su2} </h3>`); // true
+	document.write(`<h3> ${su2} || ${su1} => ${su2 || su1} </h3>`); // true
+	document.write(`<h3> ${su2} || ${su2} => ${su2 || su2} </h3>`); // false
+	document.write("<hr>");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
