@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 : Math</title>
+</head>
+<body>
+	<div class="container">
+		<h1>당첨자 발표</h1>
+		<script type="text/javascript">
+			// ceil() : 올림
+			// round() : 반올림
+			// floor() : 버림
+			// random() : 랜덤
+			// max() : 최대값
+			// min() : 최소값
+			
+			let su = prompt("전체 응모자 수 : " , 10);
+			let su2 = Math.floor((Math.random()*su)+1);
+			document.write(`<p>전체 응모자 수 : ${su}명</p>`);
+			document.write(`<p>당첨자 번호 : ${su2}번</p>`);
+		</script>
+	</div>
+</body>
+</html>

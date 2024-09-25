@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>배열(Array)</title>
+<script type="text/javascript">
+	// 배열 : 크기 지정하지 않아도 된다.
+	//       모든 자료형을 담을 수 있다.
+	
+	// 방법1
+	let arr = new Array();
+	arr[0] = 10 ;
+	arr[1] = true ;
+	arr[2] = 'A' ;
+	arr[3] = '인재개발원' ;
+	arr[4] = 179.47 ;
+	
+	// console.log("arr = " + arr);
+	console.log("arr2 = " , arr);
+	
+    // 화면 출력
+    for (var i = 0; i < arr.length; i++) {
+		document.write(`${arr[i]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	for ( var k in arr) {
+		document.write(`${arr[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 방법2
+	let arr2 = ['포도', 15, false, 'k',89.9];
+	for ( var k in arr2) {
+		document.write(`${arr2[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 방법3(문자열로 배열만들기)
+	let myData = "java, js, html, js, 10, false, spring, 15.4";
+	let myArr = myData.split(',');
+	for ( var k in myArr) {
+		document.write(`${myArr[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 자바스크립트에서는 배열을 추가,삭제할 수 있다.
+	let myArr2 = ['포도', 15, false];
+
+	// 배열 끝에 추가 : push
+	myArr2.push('JSP');
+	myArr2.push(6.0);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 배열 맨 앞에 추가 : unshift() 
+	myArr2.unshift(1024);
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 배열 마지막 요소 삭제 : pop()
+	myArr2.pop();
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 배열 맨 처음 요소 삭제 : shift()
+	myArr2.shift();
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// 특정요소 삭제 : splice(인덱스,갯수)
+	const index = myArr2.indexOf('포도');  // 특정요소 찾기
+	if(index > -1){
+		myArr2.splice(index, 2); // 해당 인덱스의 요소 두개 삭제
+	}
+	
+	for ( var k in myArr2) {
+		document.write(`${myArr2[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// ** filter : 조건을 만족하는 새로운 배열에 만들기 (특정요소를 제외한 배열 만들기) 
+	let myArr3 = ['포도', 15, false, 'k',89.9];
+	const myArr4 = myArr3.filter(item => item !== '포도');
+	for ( var k in myArr4) {
+		document.write(`${myArr4[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// ** map : 배열에서 요소 하나하나를 순회해서 특정한 연산을 해서 결과를 새로운 배열에 넣기 
+	let myArr5 = [1,2,3,4,5];
+	const myArr6 = myArr5.map(item => item * 2);
+	
+	for ( var k in myArr6) {
+		document.write(`${myArr6[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	
+	// ** find : 조건을 만족하는 첫번째 요소 찾기
+	//           만약에 찾은 요소가 없으면 undefined 이된다.
+	const myData2 = myArr5.find(item => item === 3);
+	document.write(`결과 : ${myData2}`);
+	document.write("<hr>");
+	
+	const people = [
+		{name:'둘리', age:25},
+		{name:'마이콜', age:45},
+		{name:'희동이', age:21}
+	];
+	// 나이가 25세인 사람 찾기
+	const person = people.find(item => item.age === 25);
+	document.write(`결과 : ${person.name}, ${person.age}`)
+	document.write("<hr>");
+	
+	// 현재 나이에서 1살 빼기
+	const myArr7 = people.map(item => item.age = item.age-1);
+	console.log(myArr7);
+	
+	for ( var k in myArr7) {
+		document.write(`${myArr7[k]}  &nbsp; &nbsp;`);
+	}
+	document.write("<hr>");
+	document.write("<hr>");
+	
+	console.log("people : " , people);
+	
+	// 원래 형태를 유지하면서 age만 -1하기 
+	people.forEach(item => {
+		item.age = item.age - 1 ;
+		document.write(`${item.name}의 나이 ${item.age}살 <br>`);
+	});
+	console.log(people); 
+</script>
+</head>
+<body>
+</body>
+</html>
+
+
+
+
+
+

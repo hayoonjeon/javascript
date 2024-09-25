@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 : window</title>
+</head>
+<body>
+<p>문서를 열면 팝업 창이 표시 됩니다.</p>
+<script type="text/javascript">
+	// window : alert(), prompt(), confirm(), focus(), open(), close()
+	// window.open('경로','창이름', '창 옵션');
+	// 창 옵션 : 창의 위치 지정 , 창 크기 지정
+	// window.open('notice.html','','width=500, height=400');
+	
+	// 만약에 팝업 차단이 되어있으면 
+		
+	  let blocked =  window.open('notice.html','','width=500, height=400, left=100, top=200');
+	  if (blocked == null){
+		  alert("팝업이 차단 되어 있습니다.");
+	  }
+</script>
+</body>
+</html>

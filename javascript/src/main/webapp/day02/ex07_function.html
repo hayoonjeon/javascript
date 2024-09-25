@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 : 선언함수</title>
+<script type="text/javascript">
+	function addNumber(a, b) {
+		let sum = a + b;
+		console.log(`sum = ${sum} `);
+	}
+	
+	// 호출
+	addNumber(5, 17);
+	
+	// 호이스팅의 예제
+	subNumber(5, 17);
+	function subNumber(a, b) {
+		let sum = a - b;
+		console.log(`sum = ${sum} `);
+	}
+	
+	let res ;
+	function add(a,b){
+		res = a + b;
+	}
+	
+	add(1,14);
+	console.log(`res = ${res} `);
+	
+	function sub(a,b){
+		return a - b;
+	}
+	
+	const res2 = sub(15,12);
+	console.log(`res2 = ${res2} `);
+</script>
+</head>
+<body>
+</body>
+</html>

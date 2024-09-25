@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 : Object</title>
+<script type="text/javascript">
+    // 객체는 상태값(properties)과 기능(function)으로 되어있다.
+	let obj1 = new Object();
+	// 상태값
+	obj1["name"] = "홍길동";
+	obj1["age"] = 19;
+	obj1["addr"] = "서울";
+	obj1["salary"] = 3600;
+	
+	document.write(`<p>이름 : ${obj1.name}</p>`);
+	document.write(`<p>나이 : ${obj1.age}</p>`);
+	document.write(`<p>주소 : ${obj1["addr"]}</p>`);
+	document.write(`<p>연봉 : ${obj1["salary"]}</p>`);
+	document.write(`<hr>`);
+	
+	let obj2 = {name:"둘리", age : 4, addr:"남극"};
+	document.write(`<p>이름 : ${obj2.name}</p>`);
+	document.write(`<p>나이 : ${obj2.age}</p>`);
+	document.write(`<p>주소 : ${obj2["addr"]}</p>`);
+	document.write(`<hr>`);
+</script>
+</head>
+<body>
+
+</body>
+</html>

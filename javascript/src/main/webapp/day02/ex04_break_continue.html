@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제어문 : break, continue</title>
+<script type="text/javascript">
+	/*
+	   반복문에서 반복문을 탈출하는 예약어 : break
+	   반복문에서 해당하는 회차를 무시하고 다음회차로 넘어가는 예약어 : continue
+	*/
+	
+	// 1-10까지 출력하는데 5에서 break
+	for (var i = 1; i < 11; i++) {
+		// if(i==5) break;
+		document.write(`i=${i} <br>` );
+		if(i==5) break;
+	}
+	document.write("<hr>");
+	
+	// 1-10까지 출력하는데 5에서 continue
+	for (var i = 1; i < 11; i++) {
+		// if(i==5) continue;
+		document.write(`i=${i} <br>` );
+		if(i==5) continue;
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수 : function</title>
+<script type="text/javascript">
+	// 함수와 메서드의 차이 : 클래스 안에 있으면 메서드, 클래스 밖에서 별도로 있으면 function
+	// 호출해야만 실행 할 수 있다.
+	// 선언함수, 익명함수, 화살표함수, 콜백함수
+	// return 이 존재하는 함수, 존재하지 않은 함수
+	/*
+	   선언함수 : 호이스팅이 된다.(변수와 함수(function)선언이 맨 위로 이동되는 자바스크립트의 메커니즘)
+	   function name([파라미터]) {
+		  내용;
+		  [return ;]
+	   }
+	
+      익명함수 : 이름이 존재하지 않은 함수
+	  let|const = function([파라미터]) {
+		             내용;
+		             [return ;]
+	             }
+      
+      화살표 함수 : 람다식
+      let|const = ([파라미터]) =>	내용;
+       
+      콜백함수 : 다른 함수에 인자(파라미터)로 전달 되어 나중에 호출되는 함수
+               비동기처리, 이벤트 핸들링, 배열 메서드등에 사용된다.
+               
+      function sayHello(){
+    	  console.log("hello");
+      } 
+      
+      function greet(callback){
+    	  callback();
+      }
+      
+      greet(sayHello); // 파라미터가 함수이다.
+	*/
+	 
+</script>
+</head>
+<body>
+
+</body>
+</html>
